@@ -6,6 +6,11 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+// Ruta raíz: redirige directamente a /codigos
+app.get('/', (req, res) => {
+    res.redirect('/codigos');
+});
+
 // Base de datos temporal en memoria
 let codigos = [];
 
